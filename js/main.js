@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   melhorarAcessibilidade();
   adicionarFeedbackVisual();
   
+  // Atualiza data dinâmica no extrato
+  atualizarDataExtrato();
+  
   // Inicializa formulários
   inicializarFormEnviarPix();
   inicializarFormReceberPix();
@@ -39,6 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   }
 });
+
+/**
+ * Atualiza a data no extrato para sempre mostrar a data atual
+ */
+function atualizarDataExtrato() {
+  const dataElemento = document.getElementById('data-hoje');
+  if (dataElemento) {
+    const hoje = new Date();
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const ano = hoje.getFullYear();
+    dataElemento.textContent = `Hoje - ${dia}/${mes}/${ano}`;
+  }
+}
 
 // Lazy Loading de Imagens para performance
 if ('IntersectionObserver' in window) {
