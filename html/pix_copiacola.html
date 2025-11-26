@@ -3,28 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IFPay - Copia e Cola</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>">
+  <title>IFPay - Pix Copia e Cola</title>
+  <meta name="description" content="Pague usando código Pix copia e cola">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-  <header>
-    <a href="pix.html" class="voltar">←</a>
+  <header role="banner">
+    <a href="pix.html" class="voltar" aria-label="Voltar para Pix">
+      <i class="fas fa-arrow-left"></i>
+    </a>
     <h1>Pix Copia e Cola</h1>
+    <div style="width: 40px;"></div>
   </header>
 
-  <main>
-    <div class="card">
-      <label for="chave">Código Pix</label>
-      <textarea id="chave" rows="4" placeholder="Cole o código Pix aqui..."></textarea>
+  <main role="main">
+    <section class="card" aria-label="Formulário Pix Copia e Cola">
+      <form id="formCopiaCola" novalidate>
+        <label for="chavePix">Código Pix</label>
+        <textarea 
+          id="chavePix" 
+          name="chavePix"
+          rows="5" 
+          placeholder="Cole o código Pix aqui..."
+          required
+          aria-required="true"
+          aria-describedby="chavePix-error"></textarea>
+        <span id="chavePix-error" class="error-message" role="alert"></span>
 
-      <button class="pix-btn" style="width:100%;margin-top:1rem;">Validar e Pagar</button>
-    </div>
+        <button type="submit" class="pix-btn" style="width:100%;margin-top:1.5rem;">
+          <i class="fas fa-check-circle"></i>
+          <span>Validar e Pagar</span>
+        </button>
+      </form>
+    </section>
 
-    <div class="card info">
-      <h3>Como funciona?</h3>
-      <br>
-      <p style="text-align: justify;">Copie o código gerado por outra pessoa ou loja e cole no campo acima. O sistema irá identificar automaticamente o valor e o destinatário para você confirmar o pagamento.</p>
-    </div>
+    <section class="card info" aria-label="Informações sobre Pix Copia e Cola">
+      <h3><i class="fas fa-circle-info" aria-hidden="true"></i> Como funciona?</h3>
+      <p>Copie o código gerado por outra pessoa ou loja e cole no campo acima. O sistema irá identificar automaticamente o valor e o destinatário para você confirmar o pagamento.</p>
+    </section>
   </main>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

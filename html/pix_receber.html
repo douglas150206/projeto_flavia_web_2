@@ -3,31 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>">
   <title>IFPay - Receber Pix</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="Gere um QR Code para receber Pix">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-  <header>
-    <a href="pix.html" class="voltar">←</a>
+  <header role="banner">
+    <a href="pix.html" class="voltar" aria-label="Voltar para Pix">
+      <i class="fas fa-arrow-left"></i>
+    </a>
     <h1>Receber Pix</h1>
+    <div style="width: 40px;"></div>
   </header>
 
-  <main>
-    <div class="card">
-      <label>Valor a receber</label>
-      <input type="number" placeholder="R$ 0,00">
+  <main role="main">
+    <section class="card" aria-label="Formulário para receber Pix">
+      <form id="formReceberPix" novalidate>
+        <label for="valorReceber">Valor a receber</label>
+        <input 
+          type="text" 
+          id="valorReceber" 
+          name="valorReceber"
+          placeholder="R$ 0,00"
+          required
+          aria-required="true"
+          aria-describedby="valorReceber-error">
+        <span id="valorReceber-error" class="error-message" role="alert"></span>
 
-      <label>Descrição (opcional)</label>
-      <input type="text" placeholder="Ex: almoço, transferência, etc.">
+        <label for="descricao">Descrição (opcional)</label>
+        <input 
+          type="text" 
+          id="descricao" 
+          name="descricao"
+          placeholder="Ex: almoço, transferência, etc."
+          aria-describedby="descricao-help">
+        <span id="descricao-help" style="font-size: 0.875rem; color: var(--text-tertiary); margin-top: 0.25rem; display: block;">Opcional: adicione uma mensagem</span>
 
-      <button class="pix-btn" style="width:100%;margin-top:1rem;">Gerar QR Code</button>
-    </div>
+        <button type="submit" class="pix-btn" style="width:100%;margin-top:1.5rem;">
+          <i class="fas fa-qrcode"></i>
+          <span>Gerar QR Code</span>
+        </button>
+      </form>
+    </section>
 
-    <div class="card info" style="text-align:center;">
-      <h3 style="text-align: left;">Como funciona?</h3>
-      <br>
-      <p style="text-align: justify;">Informe o valor e, se desejar, adicione uma descrição. Depois clique em <strong>Gerar QR Code</strong> para compartilhar com quem vai te enviar o Pix.</p>
-    </div>
+    <!-- QR Code gerado (inicialmente oculto) -->
+    <section id="qrCodeSection" class="card" style="display:none; text-align:center;" aria-label="QR Code gerado">
+      <h3><i class="fas fa-qrcode" aria-hidden="true"></i> QR Code Gerado</h3>
+      <div id="qrCodeDisplay" style="background: white; padding: 2rem; border-radius: var(--radius-md); margin: 1rem auto; max-width: 280px;">
+        <!-- QR Code SVG será inserido aqui via JavaScript -->
+      </div>
+      <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1rem;">
+        Mostre este código para receber o Pix
+      </p>
+      <div style="display: flex; gap: var(--spacing-sm); justify-content: center;">
+        <button type="button" class="pix-btn" style="flex: 1; max-width: 200px;" onclick="compartilharQRCode()">
+          <i class="fas fa-share-alt"></i>
+          <span>Compartilhar</span>
+        </button>
+        <button type="button" class="pix-btn" style="flex: 1; max-width: 200px; background: var(--secondary-color);" onclick="baixarQRCode()">
+          <i class="fas fa-download"></i>
+          <span>Baixar</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="card info" aria-label="Informações sobre como funciona">
+      <h3><i class="fas fa-circle-info" aria-hidden="true"></i> Como funciona?</h3>
+      <p>Informe o valor e, se desejar, adicione uma descrição. Depois clique em <strong>Gerar QR Code</strong> para compartilhar com quem vai te enviar o Pix.</p>
+    </section>
   </main>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>
