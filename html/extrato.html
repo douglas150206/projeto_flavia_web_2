@@ -16,9 +16,11 @@
       <i class="fas fa-arrow-left"></i>
     </a>
     <h1>Extrato</h1>
-    <button type="button" class="btn-icon" aria-label="Filtros">
-      <i class="fas fa-filter"></i>
-    </button>
+    <a href="perfil.html" class="btn-icon" aria-label="Ir para perfil">
+      <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: white; font-weight: 700;">
+        DK
+      </div>
+    </a>
   </header>
 
   <main role="main">
@@ -48,7 +50,7 @@
 
     <!-- Hoje -->
     <section aria-label="Transações de hoje">
-      <h2 class="data-separador">Hoje - 26/11/2025</h2>
+      <h2 class="data-separador" id="data-hoje">Hoje</h2>
       
       <div class="card historico-item">
         <div class="historico-avatar" style="background: linear-gradient(135deg, #10B981, #059669);">
@@ -237,7 +239,7 @@
 
     <!-- Carregar mais -->
     <section class="card" style="margin-bottom: calc(var(--spacing-lg) + 80px);">
-      <button type="button" class="pix-btn" style="width: 100%; background: var(--background-secondary);">
+      <button type="button" class="pix-btn" style="width: 100%;">
         <i class="fas fa-arrow-down"></i>
         <span>Carregar Mais Transações</span>
       </button>
