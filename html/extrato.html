@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>">
+  <title>IFPay - Extrato Completo</title>
+  <meta name="description" content="Veja todo o histórico de transações da sua conta">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header role="banner">
+    <a href="index.html" class="voltar" aria-label="Voltar para home">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+    <h1>Extrato</h1>
+    <button type="button" class="btn-icon" aria-label="Filtros">
+      <i class="fas fa-filter"></i>
+    </button>
+  </header>
+
+  <main role="main">
+    <!-- Filtros Rápidos -->
+    <section class="card" aria-label="Filtros rápidos">
+      <div class="filtros-extrato">
+        <button type="button" class="filtro-chip active">Todos</button>
+        <button type="button" class="filtro-chip">Recebidos</button>
+        <button type="button" class="filtro-chip">Enviados</button>
+        <button type="button" class="filtro-chip">Pix</button>
+        <button type="button" class="filtro-chip">Cartão</button>
+      </div>
+    </section>
+
+    <!-- Período -->
+    <section class="card" aria-label="Período selecionado">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3 style="margin: 0; font-size: 1rem; color: var(--text-primary);">Novembro 2025</h3>
+          <p style="margin: 0.25rem 0 0; font-size: 0.875rem; color: var(--text-secondary);">42 transações</p>
+        </div>
+        <button type="button" class="btn-icon" aria-label="Alterar período">
+          <i class="fas fa-calendar-alt"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Hoje -->
+    <section aria-label="Transações de hoje">
+      <h2 class="data-separador">Hoje - 26/11/2025</h2>
+      
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #10B981, #059669);">
+          <i class="fas fa-arrow-down"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Pix recebido</strong>
+          <span>Flávia Beatriz • 14:32</span>
+        </div>
+        <div class="historico-valor positivo">
+          <span>+ R$ 85,00</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #EF4444, #DC2626);">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Transferência enviada</strong>
+          <span>Arthur Araújo • 11:15</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 150,00</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #3B82F6, #2563EB);">
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Pagamento</strong>
+          <span>Magazine Luiza • 09:42</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 249,90</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ontem -->
+    <section aria-label="Transações de ontem">
+      <h2 class="data-separador">Ontem - 25/11/2025</h2>
+      
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #10B981, #059669);">
+          <i class="fas fa-arrow-down"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Pix recebido</strong>
+          <span>Douglas Kadomoto • 18:20</span>
+        </div>
+        <div class="historico-valor positivo">
+          <span>+ R$ 320,50</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #EF4444, #DC2626);">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Transferência enviada</strong>
+          <span>Flávia Beatriz • 15:55</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 78,00</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED);">
+          <i class="fas fa-utensils"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Alimentação</strong>
+          <span>iFood • 13:10</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 45,90</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
+          <i class="fas fa-gas-pump"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Combustível</strong>
+          <span>Posto Shell • 08:35</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 180,00</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 24/11/2025 -->
+    <section aria-label="Transações do dia 24">
+      <h2 class="data-separador">24/11/2025</h2>
+      
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #10B981, #059669);">
+          <i class="fas fa-arrow-down"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Pix recebido</strong>
+          <span>Arthur Araújo • 19:45</span>
+        </div>
+        <div class="historico-valor positivo">
+          <span>+ R$ 200,00</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #EC4899, #DB2777);">
+          <i class="fas fa-film"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Entretenimento</strong>
+          <span>Netflix • 16:00</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 39,90</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #EF4444, #DC2626);">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Transferência enviada</strong>
+          <span>Flávia Beatriz • 10:22</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 125,00</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 23/11/2025 -->
+    <section aria-label="Transações do dia 23">
+      <h2 class="data-separador">23/11/2025</h2>
+      
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #3B82F6, #2563EB);">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Mercado</strong>
+          <span>Carrefour • 17:30</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 387,45</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #10B981, #059669);">
+          <i class="fas fa-arrow-down"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Pix recebido</strong>
+          <span>Douglas Kadomoto • 12:08</span>
+        </div>
+        <div class="historico-valor positivo">
+          <span>+ R$ 500,00</span>
+        </div>
+      </div>
+
+      <div class="card historico-item">
+        <div class="historico-avatar" style="background: linear-gradient(135deg, #06B6D4, #0891B2);">
+          <i class="fas fa-coffee"></i>
+        </div>
+        <div class="historico-info">
+          <strong>Cafeteria</strong>
+          <span>Starbucks • 09:15</span>
+        </div>
+        <div class="historico-valor negativo">
+          <span>- R$ 28,50</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carregar mais -->
+    <section class="card" style="margin-bottom: calc(var(--spacing-lg) + 80px);">
+      <button type="button" class="pix-btn" style="width: 100%; background: var(--background-secondary);">
+        <i class="fas fa-arrow-down"></i>
+        <span>Carregar Mais Transações</span>
+      </button>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <nav role="navigation" aria-label="Menu principal">
+      <a href="index.html" aria-current="false">
+        <i class="fas fa-home" aria-hidden="true"></i>
+        <span>Início</span>
+      </a>
+      <a href="pix.html" aria-current="false">
+        <i class="fas fa-bolt" aria-hidden="true"></i>
+        <span>Pix</span>
+      </a>
+      <a href="cartoes.html" aria-current="false">
+        <i class="fas fa-credit-card" aria-hidden="true"></i>
+        <span>Cartões</span>
+      </a>
+      <a href="extrato.html" aria-current="page">
+        <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
+        <span>Extrato</span>
+      </a>
+      <a href="perfil.html" aria-current="false">
+        <i class="fas fa-user" aria-hidden="true"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
