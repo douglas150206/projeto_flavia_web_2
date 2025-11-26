@@ -1,0 +1,409 @@
+/**
+ * Estilos Específicos de Páginas
+ */
+
+/* Página Inicial - Saldo */
+.saldo {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--text-inverse);
+  flex-wrap: wrap;
+}
+
+.saldo-item {
+  flex: 1;
+  min-width: 140px;
+}
+
+.saldo-item p {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-bottom: var(--spacing-xs);
+}
+
+.saldo h2 {
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--spacing-sm);
+  letter-spacing: -0.025em;
+}
+
+.saldo:hover {
+  transform: translateY(0);
+}
+
+/* Gráficos */
+.grafico {
+  background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+  border-radius: var(--radius-md);
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-tertiary);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.grafico::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Histórico de Transações */
+ul.historico {
+  list-style: none;
+}
+
+ul.historico li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+ul.historico li:last-child {
+  border-bottom: none;
+}
+
+ul.historico li:hover {
+  color: var(--text-primary);
+  padding-left: var(--spacing-sm);
+  background: var(--surface-hover);
+  margin: 0 calc(-1 * var(--spacing-lg));
+  padding-left: calc(var(--spacing-lg) + var(--spacing-sm));
+  padding-right: var(--spacing-lg);
+  border-radius: var(--radius-sm);
+}
+
+ul.historico li span:first-child {
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+ul.historico li span:last-child {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+/* Histórico Item - Card Style (novo formato) */
+.historico-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.historico-item:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.historico-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.historico-info strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.historico-info span {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Página Pix - Grid de Ações */
+.pix-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Página Cartões - Card Visual */
+.cartao {
+  background: linear-gradient(135deg, #1E293B, #334155);
+  color: var(--text-inverse);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cartao::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+}
+
+.cartao p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.125rem;
+  letter-spacing: 0.1em;
+  font-weight: var(--font-weight-medium);
+}
+
+.cartao p:last-child {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Botão Adicionar Cartão */
+button.adicionar {
+  width: 100%;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.9375rem;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+button.adicionar:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  border-style: solid;
+}
+
+button.adicionar:active {
+  transform: scale(0.98);
+}
+
+/* QR Code Scanner */
+.qr-scanner {
+  background: linear-gradient(135deg, #1E293B, #334155);
+  border-radius: var(--radius-md);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--text-inverse);
+  text-align: center;
+}
+
+.qr-scanner i {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.qr-scanner p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.qr-scanner p:last-child {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* Página de Perfil */
+.perfil-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.perfil-item:last-child {
+  border-bottom: none;
+}
+
+.perfil-item strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.perfil-item p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.perfil-opcao {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.perfil-opcao:last-child {
+  border-bottom: none;
+}
+
+.perfil-opcao i:first-child {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.perfil-opcao i:last-child {
+  margin-left: auto;
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+}
+
+.perfil-opcao:hover {
+  background: var(--surface-hover);
+  padding-left: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+}
+
+.chave-pix-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--surface-hover);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.chave-pix-item strong {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.chave-pix-item p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+}
+
+/* Página de Extrato */
+.data-separador {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.filtros-extrato {
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-xs);
+  scrollbar-width: none;
+}
+
+.filtros-extrato::-webkit-scrollbar {
+  display: none;
+}
+
+.filtro-chip {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.filtro-chip:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary-color);
+}
+
+.filtro-chip.active {
+  background: var(--primary-color);
+  color: var(--text-inverse);
+  border-color: var(--primary-color);
+}
+
+.historico-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.historico-valor {
+  text-align: right;
+  font-weight: var(--font-weight-bold);
+  font-size: 1.125rem;
+}
+
+.historico-valor.positivo {
+  color: var(--success-color);
+}
+
+.historico-valor.negativo {
+  color: var(--error-color);
+}

@@ -1,0 +1,214 @@
+/**
+ * Responsividade e Utilidades
+ */
+
+/* Mobile Small */
+@media (max-width: 380px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .pix-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  main {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .saldo {
+    flex-wrap: nowrap;
+  }
+  
+  .pix-actions {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop - Layout Aprimorado */
+@media (min-width: 768px) {
+  body {
+    flex-direction: row;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: var(--spacing-xl);
+    margin-top: 70px;
+    margin-bottom: 80px;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: none;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  /* Cards em grid no desktop */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  .dashboard-grid .card:first-child {
+    grid-column: 1 / -1;
+  }
+  
+  /* Histórico side by side */
+  .historico-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Desktop Large */
+@media (min-width: 1024px) {
+  main {
+    max-width: 1000px;
+    padding: var(--spacing-xl) 3rem;
+  }
+  
+  .pix-actions {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Layout de 3 colunas para cards no desktop grande */
+  .dashboard-grid-large {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  .dashboard-grid-large .card.saldo {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop Extra Large */
+@media (min-width: 1440px) {
+  main {
+    max-width: 1200px;
+  }
+  
+  /* Sidebar para navegação no desktop muito grande */
+  body.has-sidebar {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  body.has-sidebar header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  
+  body.has-sidebar main {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 100%;
+  }
+  
+  body.has-sidebar footer {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
+/* Print Styles */
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+  
+  body {
+    background: white;
+  }
+  
+  main {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #000;
+    page-break-inside: avoid;
+  }
+  
+  .pix-btn,
+  button {
+    display: none;
+  }
+}
+
+/* Classes Utilitárias */
+.fade-in {
+  animation: fadeIn var(--transition-slow);
+}
+
+.slide-up {
+  animation: slideUp var(--transition-slow);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+
+/* Ocultar elementos em mobile */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block;
+  }
+  
+  .mobile-only {
+    display: none;
+  }
+}
